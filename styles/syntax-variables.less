@@ -1,0 +1,31 @@
+@import "colors";
+
+// This defines all syntax variables that syntax themes must implement when they
+// include a syntax-variables.less file.
+
+// General colors
+@syntax-text-color: @kyaho-text;
+@syntax-cursor-color: @kyaho-cursor;
+@syntax-selection-color: @kyaho-selection;
+@syntax-background-color: @kyaho-editor-bg;
+
+// Guide colors
+@syntax-wrap-guide-color: @kyaho-wrap-guide;
+@syntax-indent-guide-color: @kyaho-indent-guide;
+@syntax-invisible-character-color: @kyaho-invisible;
+
+// For find and replace markers
+@syntax-result-marker-color: @kyaho-result-marker;
+@syntax-result-marker-color-selected: @kyaho-result-marker-selected;
+
+// Gutter colors
+@syntax-gutter-text-color: @kyaho-editor-gutter-text;
+@syntax-gutter-text-color-selected: @kyaho-editor-gutter-text-selected;
+@syntax-gutter-background-color: @kyaho-editor-gutter-bg;
+@syntax-gutter-background-color-selected: @kyaho-editor-gutter-bg-selected;
+
+// For git diff info. i.e. in the gutter
+@syntax-color-renamed: @kyaho-git-renamed;
+@syntax-color-added: @kyaho-git-added;
+@syntax-color-modified: @kyaho-git-modified;
+@syntax-color-removed: @kyaho-git-deleted;

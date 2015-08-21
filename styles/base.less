@@ -1,0 +1,325 @@
+@import "syntax-variables";
+
+atom-text-editor, :host {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
+    }
+  }
+
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @light-gray;
+  }
+
+  .gutter .line-number.folded {
+    background-color: @kyaho-line-folded-bg;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    color: @syntax-cursor-color;
+  }
+
+  .selection {
+    color: @black !important;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+}
+
+atom-text-editor .search-results .marker .region,
+:host .search-results .marker .region {
+  background-color: transparent;
+  border: 1px solid @syntax-result-marker-color;
+}
+
+atom-text-editor .search-results .marker.current-result .region,
+:host .search-results .marker.current-result .region {
+  border: 1px solid @syntax-result-marker-color-selected;
+}
+
+
+
+
+
+
+
+
+
+
+
+.comment {
+  color: @kyaho-comment;
+}
+
+.entity {
+  &.name.type {
+    color: @light-orange;
+  }
+
+  &.other.inherited-class {
+    color: @kyaho-entity-class;
+  }
+
+  // Function declarations
+  &.name.function {
+    color: @kyaho-entity-function;
+  }
+
+  &.name.class, &.name.type.class {
+    color: @kyaho-entity-class;
+  }
+
+  &.name.section {
+    color: @blue;
+  }
+
+  &.name.tag {
+    color: @kyaho-entity-tag;
+  }
+
+  &.other.attribute-name {
+    // Affects CSS and HTML class names
+    color: @kyaho-entity-class;
+
+    &.id {
+      // Affects CSS and HTML ID's
+      color: @kyaho-entity-id;
+    }
+  }
+}
+
+.keyword {
+  color: @brand-purple;
+
+  &.control {
+    color: @brand-purple;
+  }
+
+  &.operator {
+    color: @syntax-text-color;
+  }
+
+  &.other.special-method {
+    color: @brand-blue;
+  }
+
+  &.other.unit {
+    color: @kyaho-string;
+  }
+}
+
+.storage {
+  color: @brand-purple;
+}
+
+.constant {
+  color: @brand-orange;
+
+  &.character.escape {
+    color: @black;
+    background-color: @gray2;
+  }
+
+  &.numeric {
+    color: @kyaho-string;
+  }
+
+  &.other.color {
+    color: @kyaho-string;
+  }
+
+  &.other.symbol {
+    color: @kyaho-string;
+  }
+}
+
+.variable {
+  color: @kyaho-variable;
+
+  &.interpolation {
+    color: @kyaho-variable;
+  }
+
+  &.parameter.function {
+    color: @syntax-text-color;
+  }
+}
+
+.invalid.illegal {
+  color: @kyaho-illegal;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.string {
+  color: @kyaho-string;
+
+
+  &.regexp {
+    color: @kyaho-regexp;
+    font-style: italic;
+  }
+
+  &.other.link {
+    color: @kyaho-regexp;
+  }
+}
+
+.punctuation {
+  &.definition {
+    &.comment {
+      color: @kyaho-comment;
+    }
+
+    &.string,
+    &.variable,
+    &.parameters,
+    &.array {
+      color: @syntax-text-color;
+    }
+
+    &.heading,
+    &.identity {
+      color: @kyaho-heading;
+    }
+
+    &.bold {
+      color: @syntax-text-color;
+      font-weight: bold;
+    }
+
+    &.italic {
+      color: @syntax-text-color;
+      font-style: italic;
+    }
+  }
+
+  &.section.embedded {
+    color: @syntax-text-color;
+  }
+
+}
+
+.support {
+  &.class {
+    color: @kyaho-entity-class;
+  }
+
+  &.function  {
+    color: @kyaho-entity-function;
+
+    &.any-method {
+      color: @kyaho-entity-function;
+    }
+  }
+}
+
+.meta {
+  &.class {
+    color: @brand-orange;
+  }
+
+  &.link {
+    color: @brand-blue;
+  }
+
+  &.require {
+    color: @brand-purple;
+  }
+
+  &.selector {
+    color: @brand-red;
+  }
+
+  &.separator {
+    color: @black;
+  }
+}
+
+.none {
+  color: @syntax-text-color;
+}
+
+.markup {
+  &.bold {
+    color: @syntax-text-color;
+    font-weight: bold;
+  }
+
+  &.changed {
+    color: @brand-purple;
+  }
+
+  &.deleted {
+    color: @brand-red;
+  }
+
+  &.italic {
+    color: @syntax-text-color;
+    font-style: italic;
+  }
+
+  &.heading .punctuation.definition.heading {
+    color: @brand-blue;
+  }
+
+  &.inserted {
+    color: @brand-green;
+  }
+
+  &.list {
+    color: @brand-red;
+  }
+
+  &.quote {
+    color: @brand-orange;
+  }
+
+  &.raw.inline {
+    color: @brand-green;
+  }
+}
+
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+  &.heading {
+    color: @brand-green;
+  }
+}
+
+atom-text-editor[mini] .scroll-view,
+:host([mini]) .scroll-view {
+  padding-left: 1px;
+}
