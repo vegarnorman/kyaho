@@ -323,3 +323,10 @@ atom-text-editor[mini] .scroll-view,
 :host([mini]) .scroll-view {
   padding-left: 1px;
 }
+
+.editor, atom-text-editor::shadow {
+  .bracket-matcher {
+    background: @kyaho-selection;
+    border-color: #000000;
+  }
+}
